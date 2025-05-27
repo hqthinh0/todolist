@@ -1,5 +1,7 @@
 import { useState } from 'react'
-// import Heading from './Components/layout/Heading'
+import Headding from './components/Headding'
+import Todolist from './components/Todolist'
+
 
 
 function App() {
@@ -8,7 +10,8 @@ function App() {
   return (
     <>
       <div className='container min-h-screen mx-auto py-32 '>
-        {/* <Heading /> */}
+        <Headding />
+        <Todolist />
       </div>
     </>
   )
