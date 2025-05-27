@@ -28,12 +28,21 @@ const TodoSlice = createSlice ({
             state.searchTerm = action.payload;
         },
         updateTodo: (state, action) =>{
-            const {id, task} = action.payload;
+            const {id, task, description, status} = action.payload;
             const index = state.todoList.findIndex((todo) => todo.id === id);
-            state.todoList[index].task = task;
+            console.log("index",index);
+            
+            if (index !== -1) {
+                state.todoList[index].task = task;
+                state.todoList[index].description = description || "";
+                state.todoList[index].status = status || "Todo";
+            }
         },
+        deletodo: (state, action) =>{
+            state.todoList = state.todoList.filter((todo) => todo.id !== action.payload);
+        }
     }
 });
-export const {setTodoList, addTodo, sortTodo, setSearchTerm, updateTodo } = TodoSlice.actions;
+export const {setTodoList, addTodo, sortTodo, setSearchTerm, updateTodo, deletodo } = TodoSlice.actions;
 
 export default TodoSlice.reducer;
