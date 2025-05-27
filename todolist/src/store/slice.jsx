@@ -31,7 +31,6 @@ const TodoSlice = createSlice ({
             const {id, task, description, status} = action.payload;
             const index = state.todoList.findIndex((todo) => todo.id === id);
             console.log("index",index);
-            
             if (index !== -1) {
                 state.todoList[index].task = task;
                 state.todoList[index].description = description || "";
