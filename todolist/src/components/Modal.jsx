@@ -23,10 +23,10 @@ const Modal  = ({ showModal, setShowModal, listItem, status, setStatus, newTask,
           <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="w-full border border-gray-300 p-2 rounded-md mb-4"  placeholder="mô tả công việc"  />
   
           <div className="flex justify-end space-x-2">
-            <button onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400"> Hủy  </button>
-            <button onClick={handleTodo} className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-600"> {edit ? "Cập nhật" : "Thêm"} </button>
+            <button onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 cursor-pointer"> Hủy  </button>
+            <button onClick={handleTodo} className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-600 cursor-pointer"> {edit ? "Cập nhật" : "Thêm"} </button>
           </div>
-          <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 text-gray-500 text-xl">  <IoClose />  </button>
+          <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 text-gray-500 text-xl cursor-pointer">  <IoClose />  </button>
         </div>
       </div>
     );

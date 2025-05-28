@@ -6,7 +6,7 @@ import { MdOutlineEdit } from "react-icons/md";
 const TodoItem = ({ todo, handlehandleEdit , handleDelete }) => {
 
   return (
-	<div key={todo.id} className={`border-l-4 ${ todo.status === "Done"  ? "border-green-500" : todo.status === "In Progress"  ? "border-yellow-500"  : "border-gray-400" } bg-white mt-3 mb-3 border p-4 rounded-xl shadow-md flex bo justify-between items-start gap-4 align-items`}>
+	<div key={todo.id} className={`border-l-4 ${ todo.status === "Done"  ? "border-green-500" : todo.status === "In Progress"  ? "border-yellow-500"  : "border-gray-400" } bg-white mt-3 mb-3 border p-4 rounded-xl shadow-md flex bo justify-between gap-4 items-center`}>
 		<div className='break-all pr-5'>
 			<h3 className="font-semibold text-2xl">{todo.task}</h3>
 			<p className="text-sm p-1.5 pl-0 text-gray-600">{todo.description}</p>

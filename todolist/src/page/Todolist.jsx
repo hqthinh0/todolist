@@ -1,13 +1,6 @@
 import React, { useEffect, useState , useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  setTodoList,
-  addTodo,
-  sortTodo,
-  setSearchTerm,
-  updateTodo,
-  deletodo,
-} from '../store/slice';
+import { setTodoList, addTodo, sortTodo, setSearchTerm, updateTodo, deletodo} from '../store/slice';
 
 import Heading from '../components/Heading';
 import TodoItem from '../components/TodoItem';
@@ -65,13 +58,14 @@ const Todolist = () => {
   const handleTodo = () => {
     if (newTask.trim().length === 0) return toast.error('Lỗi Chưa nhập thông tin');
 
-    if (edit === true){
+    if (edit){
         dispatch(updateTodo({
             id: edit ? update : Date.now(),
             task: newTask,
             description : description,
             status : status,
         }));
+        setEdit(false);
         toast.success('chỉnh sửa thành công');
     }else{
         dispatch( addTodo({
@@ -88,7 +82,7 @@ const Todolist = () => {
     setDescription('');
     setStatus('Todo');
     setShowModal(false);
-   
+    
   };
 
   const handleDelete = (todo) =>{
