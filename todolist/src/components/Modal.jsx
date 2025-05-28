@@ -7,10 +7,10 @@ const Modal  = ({ showModal, setShowModal, listItem, status, setStatus, newTask,
     return (
       <div className="fixed inset-0 bg-white/30 backdrop-blur-sm flex items-center justify-center z-50">
         <div className="bg-white rounded-lg p-6 w-96 shadow-lg relative m-5">
-          <h2 className="text-xl font-semibold mb-4">{edit ? "Cập nhật công việc" : "Thêm công việc mới"}</h2>
+          <h2 className="text-xl font-semibold mb-4">{edit ? "Update Work" : "Add Work"}</h2>
           
           <div className="mb-4">
-            <label className="block font-medium mb-2">Trạng thái:</label>
+            <label className="block font-medium mb-2">Status:</label>
             <div className="flex gap-4">
               {listItem.map((option) => (
                 <label key={option} className="flex cursor-pointer items-center gap-2 text-sm">
@@ -18,13 +18,13 @@ const Modal  = ({ showModal, setShowModal, listItem, status, setStatus, newTask,
               ))}
             </div>
           </div>
-          <input type="text" placeholder="Nhập công việc " value={newTask} onChange={(e) => setNewTask(e.target.value)} className="w-full border border-gray-300 p-2 rounded-md mb-4"  />
+          <input type="text" placeholder="Work" value={newTask} onChange={(e) => setNewTask(e.target.value)} className="w-full border border-gray-300 p-2 rounded-md mb-4"  />
   
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="w-full border border-gray-300 p-2 rounded-md mb-4"  placeholder="mô tả công việc"  />
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="w-full border border-gray-300 p-2 rounded-md mb-4"  placeholder="Description"  />
   
           <div className="flex justify-end space-x-2">
-            <button onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 cursor-pointer"> Hủy  </button>
-            <button onClick={handleTodo} className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-600 cursor-pointer"> {edit ? "Cập nhật" : "Thêm"} </button>
+            <button onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 cursor-pointer"> Cancel  </button>
+            <button onClick={handleTodo} className="px-4 py-2 bg-amber-500 text-white rounded hover:bg-amber-600 cursor-pointer"> {edit ? "Update" : "Add"} </button>
           </div>
           <button onClick={() => setShowModal(false)} className="absolute top-2 right-2 text-gray-500 text-xl cursor-pointer">  <IoClose />  </button>
         </div>

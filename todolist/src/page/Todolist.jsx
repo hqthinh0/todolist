@@ -66,7 +66,7 @@ const Todolist = () => {
             status : status,
         }));
         setEdit(false);
-        toast.success('chỉnh sửa thành công');
+        toast.success('Chỉnh sửa thành công');
     }else{
         dispatch( addTodo({
               id: Date.now(),
@@ -75,7 +75,7 @@ const Todolist = () => {
               status : status,
           })
         );
-        toast.success('Thêm vào Todolist thành công');
+        toast.success('Thêm vào Danh Sách thành công');
     }
    
     setNewTask('');
@@ -88,7 +88,7 @@ const Todolist = () => {
   const handleDelete = (todo) =>{
 
     dispatch(deletodo(todo));
-    toast.success('Đã xoá todo thành công');
+    toast.success('Đã xoá Danh Sách thành công');
   }
 
   return (
