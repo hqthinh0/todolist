@@ -3,7 +3,7 @@ import React from 'react'
 const Heading = ({ filterStatus, setFilterStatus, searchText, setSearchText, onAddTodo }) => {
   return (
     <div className="mb-6">
-      <label htmlFor="search" className="block font-semibold text-4xl text-center mb-3.5 text-gray-700 text-red-500">App Todolist</label>
+      <label htmlFor="search" className="block font-semibold text-4xl text-center mb-3.5 text-red-500 font-serif">Quản lý danh sách công việc</label>
      
       <input
         id="search"
